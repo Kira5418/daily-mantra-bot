@@ -1,0 +1,20 @@
+name: Daily Mantra
+
+on:
+  schedule:
+    - cron: "0 7 * * *"  # runs every day at 07:00 UTC
+  workflow_dispatch:     # allows manual trigger
+
+jobs:
+  send-mantra:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install openai requests
+      - name: Run mantra bot
+        run: python mantra_bot.py
