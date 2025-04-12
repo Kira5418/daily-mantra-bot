@@ -4,7 +4,7 @@ import random
 import openai
 import requests
 
-delay = random.randint(0, 28800)
+delay = random.randint(0, 60)
 time.sleep(delay)
 
 openai_api_key = os.environ["OPENAI_API_KEY"]
