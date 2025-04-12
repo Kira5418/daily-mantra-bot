@@ -4,7 +4,7 @@ import random
 import openai
 import requests
 
-delay = random.randint(0, 60)
+delay = random.randint(0, 14400) # 4 hours
 print(f"Delaying for {delay} seconds before sending mantra...")
 time.sleep(delay)
 
