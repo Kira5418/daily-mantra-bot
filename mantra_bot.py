@@ -12,7 +12,7 @@ telegram_bot_token = os.environ["TELEGRAM_BOT_TOKEN"]
 telegram_chat_id = os.environ["TELEGRAM_CHAT_ID"]
 
 client = openai.OpenAI(api_key=openai_api_key)
-model = random.choice(["gpt-3.5-turbo", "gpt-4-turbo"]),
+model = random.choice(["gpt-3.5-turbo", "gpt-4-turbo"])
 
 response = client.chat.completions.create(
     model = model,
