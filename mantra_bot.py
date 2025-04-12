@@ -29,7 +29,7 @@ print("OpenAI response:", response)
 mantra = response.choices[0].message.content.strip()
 print("Mantra extracted:", mantra)
 
-message = f"🧘‍♀️\n\n{mantra}"
+message = f"🧘‍♀️ {mantra}"
 print("Telegram message composed:", message)
 
 tg_response = requests.post(
