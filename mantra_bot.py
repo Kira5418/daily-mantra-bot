@@ -1,3 +1,4 @@
+import os
 import time
 import random
 import openai
@@ -9,7 +10,7 @@ delay = random.randint(0, 28800)
 time.sleep(delay)
 
 # OpenAI setup
-openai.api_key = "your-openai-key"
+openai.api_key = os.environ["OPEN_API_KEY"]
 
 response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
@@ -25,8 +26,8 @@ response = openai.ChatCompletion.create(
 quote = response.choices[0].message["content"].strip()
 
 # Telegram setup
-telegram_bot_token = "your-telegram-bot-token"
-telegram_chat_id = "your-chat-id"
+telegram_bot_token = os.environ["TELEGRAM_BOT_TOKEN"]
+telegram_chat_id = os.environ["TELEGRAM_CHAT_ID"]
 
 message = f"🧘‍♀\n\n{quote}"
 
