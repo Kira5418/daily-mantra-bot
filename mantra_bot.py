@@ -32,7 +32,7 @@ print("Mantra extracted:", mantra)
 message = f"🧘‍♀️\n\n{mantra}"
 print("Telegram message composed:", message)
 
-requests.post(
+tg_response = requests.post(
     f"https://api.telegram.org/bot{telegram_bot_token}/sendMessage",
     data={"chat_id": telegram_chat_id, "text": message}
 )
